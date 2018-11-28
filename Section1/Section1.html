@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="vue.js"></script>
+    <title>SECTION1</title>
+</head>
+<body>
+    <div id="app">
+        <h1 v-once>{{title}}</h1>
+        <h2>{{sayHello()}}</h2>
+        The link is: <a v-bind:href="link">Google</a>
+        <h3>{{title}}</h3>
+        <hr>
+        <p v-html="anotherLink"></p>
+    </div>
+</body>
+<script>
+    new Vue({
+        el:'#app',
+        data:{
+            title:"Chào các bạn",
+            link:"https://google.com",
+            anotherLink:"<a href='https://google.com'>Google</a>"
+        },
+        methods:{
+            sayHello:function(){
+                this.title="Chào chi mấy cha";
+                return this.title;
+            }
+        }
+    });
+</script>
+</html>

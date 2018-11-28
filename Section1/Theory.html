@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>VUE JS</title>
+</head>
+<body>
+    <ul>Template of VUEJS
+        <li>VUE JS tạo ra 1 quan hệ với thằng html, và sau đó nó tạo ra 1 thanh nien hmtl thực sự  </li>
+        <li>Khi ta thay đổi thuộc tính trong hàm thì thuộc tính ở trên cũng thay đổi luôn</li>
+        <li>Khi ta xài thuộc tính 1 lần và sau đó thay đổi nó chứ không phải là 
+            thay đổi ngay bằng các phương thức thì ta dùng từ khóa v-once            
+        </li>
+        <li>Nhưng sau khi ta thay dùng 1 lần đó rồi thì các lần sau thuộc tính đó 
+            sẽ bị thay đổi luôn bởi các phương thức gọi đến nó. Cái này dùng để gọi là 
+            giữ lại giá trị đầu tiên của nó. Chưa biết để làm gì.
+        </li>
+        <li>Ta có thể in thuộc tính html qua Vue thông qua câu lệnh v-html</li>
+        <li>V-model hay vãi, trong form có value, value đó là thuộc tính của thằng kia 
+            ta thay đổi giá trị trong form thì tự nhiên giá trị của thằng kia nó cũng thay đổi 
+            v-model vừa hiện ra vừa lưu vào, hay vãi.
+        </li>
+    </ul>
+    <ul>Event Listen
+        <li>Ta có thể lấy tọa độ thông qua hàm của JS luôn , ClientX, ClientY</li>
+        <li>Ta cũng có thể vừa lưu và vừa show giá trị của thanh niên nào đó thông qua hàm v-model</li>
+        <li>Ta hạn chế tác động tới giá trị của các thuộc tính qua các hàm, vì trong trang đôi khi có nhiều hàm 
+            tác động tới nhiều giá trị, do đó ta rất khó maintain, để thay đổi điều đó ta thực hiện 
+            thay đổi giá trị của thuộc tính ngay trong chỗ mà ta cần luôn
+        </li>
+        <li>REACT tự động upload lại trang khi ta thay đổi thuộc tính, nhưng nó không biết hay không 
+            upload lại trang khi ta upload thuộc tính của phương thức đó, tức là 
+            một phương thức thay đổi giá trị của thuộc tính thì ta trang không biết được, và không load lại 
+            Do đó ta sử dụng 1 phương thức gọi là COMPUTED
+        </li>
+    </ul>
+
+    <ul>COMPUTED 
+        <li>Tất cả những gì được lưu vào trong COMPUTED sẽ được(có thể được sử dụng như là 1)
+            thuộc tính trong trang, chứ không phải là phương thức.
+        </li>
+        <li>Ta sử dụng computed khi ta không muốn hay không cần update lại giá trị của các biến 
+            thanh niên này không lắng nghe sự thay đổi của các biến như thằng function() luôn luôn lắng 
+            nghe tất cả các biến khi nó update giá trị 
+            còn thằng này thì chỉ có những biến nào bên trong nó thì nó mới chạy, hay là biết giá trị 
+            của biến đó thôi.
+        </li>
+        <li>Thanh niên này còn khá linh hoạt nữa, ví dụ ban đầu ta có thuộc tính là name=danh 
+        , ta có hàm là showName, thì ta tiến hành gọi hàm thì nó sẽ show ra là Danh 
+        nhưng sau đó ta muốn thay đổi tên thì ta chỉ cần gọi vm.name=tram, ta gọi hàm show thi kết quả 
+        sẽ là Tram 
+        </li>
+        <li>COMPUTED thay đổi thông tin khi và chỉ khi thuộc tính mà nó phụ thuộc vào thay đổi 
+            tức là ta phải set giá trị cho nó thì mới được 
+        </li>
+        <li>Cần sử dụng COMPUTED là như thế này, giả sử ta có thuộc tính A và B thuộc A,A tính toán cực kì phức tạp mới  
+            ra được, nếu ta sử dụng hàm thông thường thì để thu được giá trị của B, ta phải chờ A tính do đó  
+        rất mất nhiều thời gian và không cần thiết, thay vì vậy ta sử dụng COMPUTED, chỉ thay đổi khi nào 
+        A thay đổi và B phụ thuộc vào nó </li>
+    </ul>
+    <ul>WATCH 
+        <li>Trong thanh niên này ta set thanh niên ta cần WATCH, 1 trong các thuộc tính</li>
+        <li>Cái này dùng khi ta muốn set lại giá trị cho nó 1 cách nhanh chóng</li>
+        <li>WATCH dùng khi ta cần thay đổi giá trị của thuộc tính này khi phụ thuộc vào thuộc tính khác 
+            thì ta dùng wathc, nhưng ta nên sử dụng COMPUTED là tốt hơn WATCH 
+        </li>
+        <li>WACTH trong kia người ta nói khác mà trong của MAX nó nói khác là sao ta, 
+            nhưng mà cái của MAX nói hay hơn.
+        </li>
+
+    </ul>
+    <ul>Mẹo vặt: 
+        <li>Ta có thể thay một số cái nhỏ để tiết kiệm thời gian như: v-on:click 
+            @click 
+            v-bind:href=:href
+        </li>
+
+    </ul>
+    <ul>CSS và VUEjS 
+        <li>Có rất nhiều cách tác động tới thanh niên css trong này, tác động thông qua từ khóa :class </li>
+        <li>Nói chung là nó rất hay, mà ta không biết nói sao cả, kkk</li>
+        <li>Cái này hay vãi luôn á ta, không biết nói sao nhưng nó xử lí mượt mà vãi</li>
+    </ul>
+
+</body>
+</html>

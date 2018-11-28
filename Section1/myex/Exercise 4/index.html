@@ -1,0 +1,107 @@
+<script src="https://npmcdn.com/vue/dist/vue.js"></script>
+<link rel="stylesheet" href="styles.css">
+<div id="exercise">
+  <!-- 1) Start the Effect with the Button. 
+    The Effect should alternate the "highlight" or "shrink" class on each new setInterval tick
+     (attach respective class to the div with id "effect" below) -->
+  <div>
+    <button @click="startEffect">Start Effect</button>
+    <div id="effect" v-bind:class="startEff">
+      Cái này là gọi hàm css thông qua class, class không in-line, chắc là không 
+      có một thuộc tính mà có nhiều thuộc tính nè
+      cái này khá mạnh khi kết hợp với các COMPUTED properti 
+      nên ta hay dùng cách này, cũng khá hay
+    </div>
+  </div>
+  <hr>
+  
+  <!-- 2) Create a couple of CSS classes and attach them via the array syntax -->
+  <div v-bind:class="[shapeStyle, textStyle]">Chơi với mảng ta dùng cách này</div>
+
+  <hr>
+  <!-- 3) Let the user enter a class (create some example classes) and attach it -->
+  <div>
+    <input type="text" v-model="shapeOption">
+    <input type="text" v-model="textOption">
+    <div v-bind:class="[shapeStyle,shapeOption,textOption]">Kết hợp nhiều class lại nè, 
+      vừa có class cần điều kiện,
+      vừa có class sẵn có.
+    </div>
+  </div>
+  <hr>
+  <!-- 4) Let the user enter a class and enter true/ false 
+    for another class (create some example classes) and attach the classes -->
+  <div>
+    <input type="text" v-model="shapeOption">
+    <input type="text" v-model="choose">
+    <div v-bind:class="[shapeStyle,shapeOption,{new:choose}]">
+        Vừa điều kiện và vừa cố định ta dùng cái này, Cái có điều kiện chỉ sử dụng 
+        khi khai báo ngoài class, còn cái mà có trong data rồi 
+        thì thua nha 
+
+
+    </div>
+  </div>
+  <!-- 5) Repeat 3) but now with values for styles (instead of class names). 
+    Attach the respective styles.  -->
+  <div>
+      <input type="text" v-model="myStyle.backgroundColor">
+      <div v-bind:style="myStyle">
+        Ta chơi style thay vì chơi với class nè 
+      </div>
+  </div>
+  <!-- 6) Create a simple progress bar with setInterval and style bindings. Start it by hitting the below button. -->
+  <div>
+    <button v-on:click="startProgress">Start Progress</button>
+    <div v-bind:style="myProgress"></div>
+  </div>
+</div>
+<script>
+  new Vue({
+    el:"#exercise",
+    data:{
+      startEff:{
+        highlight:true,
+        shrink:false
+      },
+      shapeStyle:'shape',
+      shapeOption:'shape2',
+      textOption:'text4',
+      textStyle:'text',
+      choose:false,
+      myStyle:{
+        width:'100px',
+        height:'100px',
+        backgroundColor:'yellow'
+      },
+      myProgress:{
+        border:"red solid 2px",
+        padding:"10px",
+        height:"20px",
+        width:"10px",
+      }
+    },
+    methods:{
+      startEffect:function(){
+        var vm=this;
+        setInterval(function(){
+          vm.startEff.highlight=!vm.startEff.highlight;
+          vm.startEff.shrink=!vm.startEff.shrink;
+      },1000);
+      },
+      startProgress:function(){
+        var vm=this;
+        tempWidth=0;
+        setInterval(function(){
+          tempWidth+=10;
+          vm.myProgress.width=tempWidth +'px';
+          
+      },1000);
+      }
+    }
+
+    
+    
+
+  })
+</script>

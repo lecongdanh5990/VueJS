@@ -1,0 +1,86 @@
+<script src="https://npmcdn.com/vue/dist/vue.js"></script>
+<link rel="stylesheet" href="styles.css">
+<div id="exercise">
+  <!-- 1) Start the Effect with the Button. The Effect should alternate the "highlight" or "shrink" class on each new setInterval tick (attach respective class to the div with id "effect" below) -->
+  <div>
+    <button @click="startEffect()">Start Effect</button>
+    <div id="effect" v-bind:class="startEff"></div>
+  </div>
+  <!-- 2) Create a couple of CSS classes and attach them via the array syntax -->
+  <div v-bind:class="[shape, text]" >I got no class :(
+    use an array to decoratees this div
+  </div>
+  <!-- 3) Let the user enter a class (create some example classes) and attach it -->
+  <div>
+    <input type="text" v-model="noShape">
+    <div v-bind:class="[{textOfDiv:true},noShape]">You never fail until you stop trying</div>
+  </div>
+  <hr>
+  <!-- 4) Let the user enter a class and enter true/ false for another class 
+    (create some example classes) and attach the classes -->
+  <div>
+    <input type="text" v-model="noShape">
+    <input type="text" v-model="choose">
+    <div v-bind:class="[{advanced:choose},noShape]">Có niềm tin thì ta sẽ làm được
+    </div>
+  </div>
+  <hr>
+  <!-- 5) Repeat 3) but now with values for styles (instead of class names). 
+        Attach the respective styles.  -->
+  <div>
+      <input type="text" v-model="myStyle.backgroundColor">
+      <div v-bind:style="myStyle">You never fail until you stop trying</div>
+  </div>
+  <!-- 6) Create a simple progress bar with setInterval and style bindings. Start it by hitting the below button. -->
+  <div>
+    <button @click="startProcess()">Start Progress</button>
+    <div v-bind:style="process"></div>
+  </div>
+</div>
+
+<script>
+  new Vue({
+  el: '#exercise',
+  data: {
+  startEff: {
+    highlight: true,
+      shrink: false
+    },
+  shape:"shape",
+  text:'text',
+  noShape:'',
+  choose:'',
+  myStyle:{
+    width:"100px",
+    height:"200px",
+    backgroundColor:"green"
+  },
+  process:{
+    width:'0px',
+    height:'50px',
+    border:"solid 2px red"
+  }
+  },
+  computed:{
+    
+  },
+  methods:{
+    startEffect:function(){
+      var vm=this;
+      setInterval(function(){
+          vm.startEff.highlight=!vm.startEff.highlight;
+          vm.startEff.shrink=!vm.startEff.shrink;
+      },1000);
+    },
+    startProcess:function(){
+      var vm=this;
+      width=0;
+      setInterval(function(){
+        width+=10;
+          vm.process.width=width +'px';
+      },2000);
+    },
+
+  }
+});
+</script>

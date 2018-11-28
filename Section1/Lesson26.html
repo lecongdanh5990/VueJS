@@ -1,0 +1,66 @@
+<script src="https://npmcdn.com/vue/dist/vue.js"></script>
+<style>
+    .demo{
+        width: 200px;
+        height: 200px;
+        
+        display: inline-block;
+        font-weight: bold;
+        text-align: center;
+    }
+    .red{
+        background-color: red;
+    }
+    .yellow{
+        background-color: yellow;
+    }
+    .green{
+        background-color: green;
+    }
+    .blue{
+        background-color: blue;
+    }
+</style>
+<div id="app">
+   <div class="demo" @click="attachRed=!attachRed":class="divClasses">Livefornow</div>
+   <div class="demo"@click="attachRed=!attachRed":class="{red:attachRed}">Master PHP</div>
+   <div class="demo" :style="{'background-color':color}">Master JS</div>
+   <div class="demo" :class="[color,{red:attachRed} ]">Master Android</div>
+   <div class="demo" :style="myStyle">Master Android</div>
+
+   <div class="demo" :style="[myStyle, {height:width}]">Kết hợp giữa Computed properties và properties</div>
+   <input type="text" v-model="color">
+   <input type="text" v-model="width">
+</div>
+
+<script>
+    new Vue({
+    el: '#app',
+    data: {
+        attachRed:false,
+        color:"blue",
+        width:100
+    },
+    computed: {
+    divClasses: function () {
+        return{
+            red:this.attachRed,
+            green:this.attachRed
+        };
+    },
+    myStyle:function(){
+        return{
+            backgroundColor:this.color,
+            width:this.width + "px"
+        };
+    }
+    },
+    watch: {
+        value:function(){
+            setTimeout(function(){
+                this.value=0;
+            },2000);
+        }
+    }
+})
+</script>
