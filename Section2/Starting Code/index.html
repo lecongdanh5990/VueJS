@@ -11,7 +11,7 @@
 	<div id="app">
 		<p v-if="show">You can see me!</p>
 		<p v-else>YOU CAN"T SEE ME????</p>
-
+		
 		<template>
 			<h1>You never fail until you stop trying </h1>
 			<p>Ta không  thể nào thấy thanh niên template trong trình duyệt khi ta tiến hành 
@@ -22,7 +22,11 @@
 				ta có thể dùng thay cho div vì nó còn hay hơn cả div nữa, hay vãi nồi 
 			</p>
 		</template>
-
+		<p v-show="show">V-show khác với V-if ở chỗ là khi nó không show thì nó  
+			tự động thêm vào thuộc tính display-none, nó giữ nguyên cấu trúc html của chúng ta 
+			chứ không như v-if, nó comment mất mấy thanh niên của chúng ta, đôi khi các thanh niên này 
+			rất cần thiết trong việc định dạng hay gì gì đó
+		</p>
 		<button @click="show=!show">CLICK TO PlAY</button>
 	</div>
 </body>

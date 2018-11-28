@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>V-FOR in VUEJS</title>
+</head>
+<body>
+	<!-- Put this in the HTML section in JSFiddle! -->
+	<div id="app">
+		<ul>Bài 43 khó hiểu vãi
+            <li v-for="(car,i) in cars">{{car}} ({{i}})</li>
+        </ul>
+        <button @click="cars.push('Huyndai')">Add new Car</button>
+        <template v-for="(car,i) in cars">
+                <h3>{{car}} </h3>
+                <p>{{i}}</p>
+        </template>
+        <hr>
+        <ul>
+            <li v-for="person in persons">
+                <div v-for="(v,k,index) in person">{{k}}: {{v}} ({{index}})</div>
+            </li>
+        </ul>
+        <span v-for="n in 10">{{n}}</span>
+
+    </div>
+    
+   
+</body>
+<script src="https://unpkg.com/vue/dist/vue.js"></script>
+<script src="v_for.js"></script>
+</html>
