@@ -1,9 +1,19 @@
-
-<!-- Put this in the HTML section in JSFiddle! -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>V-if in VUEJS</title>
+</head>
+<body>
+	<!-- Put this in the HTML section in JSFiddle! -->
+	<div id="app">
+		<p v-if="show">You can see me!</p>
+		<p v-else>YOU CAN"T SEE ME????</p>
+		<button @click="show=!show">CLICK TO PlAY</button>
+	</div>
+</body>
 <script src="https://unpkg.com/vue/dist/vue.js"></script>
-
-<div id="app">
-	<p>You can see me!</p>
-	<p>Do you also see me?</p>
-</div>
 <script src="app.js"></script>
+</html>
