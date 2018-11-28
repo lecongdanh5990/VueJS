@@ -11,6 +11,18 @@
 	<div id="app">
 		<p v-if="show">You can see me!</p>
 		<p v-else>YOU CAN"T SEE ME????</p>
+
+		<template>
+			<h1>You never fail until you stop trying </h1>
+			<p>Ta không  thể nào thấy thanh niên template trong trình duyệt khi ta tiến hành 
+				inspect cả, hay vãi, thuộc tính mới trong html 5 
+			</p>
+			<p>Thanh niên này được dùng khi nhóm nhiều thanh niên lại với nhau và tiến hành xét điều 
+				kiện hay gì gì đó, khá hay vì nó không ảnh hưởng gì tới layout của chúng ta 
+				ta có thể dùng thay cho div vì nó còn hay hơn cả div nữa, hay vãi nồi 
+			</p>
+		</template>
+
 		<button @click="show=!show">CLICK TO PlAY</button>
 	</div>
 </body>
