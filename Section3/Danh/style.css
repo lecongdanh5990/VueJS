@@ -1,0 +1,110 @@
+*{
+    font-family: 'Montserrat', sans-serif;
+}
+body{
+    margin: 0px;
+}
+.objects{
+    margin-left: 150px; 
+    margin-top:20px;
+}
+.object{
+    padding: 20px;
+    border: solid 2px green;
+    background-color: aqua;
+    margin: 0px;
+    width: 40%;
+    display:inline-block;
+    box-sizing: border-box;
+    text-align: center;
+}
+.object-health{
+    padding: 0px;
+    border: 2px red solid;
+    text-align: center;
+    height: 50px;
+}
+.object-health__show{
+    margin: 0;
+    text-align: center;
+    font-size: 24px;
+    font-weight: bold;
+    color: yellow;
+    height:100%;
+    background-color: blue;
+    transition:width 500ms;
+}
+.startgame{
+    margin-top:20px;
+    width: 70%;
+    padding: 10px;
+    border: 2px red solid;
+    text-align: center;
+    height: 70px;
+    background-color: greenyellow;
+    margin-left: 150px;
+}
+.startgame button{
+    font-weight: bold;
+    font-size: 26px;
+    color: white;
+    padding: 20px;
+    background-color: orangered;
+    border-radius: 12px;
+    box-shadow: 2px 2px 5px gray;
+}
+.controlgame{
+    margin-top:20px;
+    width: 70%;
+    padding: 10px;
+    border: 2px red solid;
+    text-align: center;
+    height: 70px;
+    background-color: rgb(170, 98, 177);
+    margin-left: 150px;
+}
+.controlgame button{
+    font-weight: bold;
+    font-size: 26px;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 2px 2px 5px gray;
+}
+.controlgame__hit{
+    color: white;
+    background-color: red;
+}
+.controlgame__superpower{
+    background-color: blue;
+    color:white;
+}
+.controlgame__heal{
+    background-color: green;
+    color:white;
+}
+.controlgame__giveup{
+    background-color: white;
+    color:red;
+}
+.informations{
+    margin-top:20px;
+    width: 70%;
+    border: 2px solid yellow;
+    margin-left: 150px;
+    background-color: rgb(138, 132, 124);
+    font-weight: bold;
+    text-align: center;
+    font-size:25px;
+}
+.information-player{
+    color:white;
+    border: 2px solid yellow;
+    margin:10px 100px;
+    background-color: cornflowerblue;
+}
+.information-monster{
+    color:red;
+    border: 2px solid yellow;
+    margin:10px 100px;
+    background-color: rgb(80, 18, 95);
+}
