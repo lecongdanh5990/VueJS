@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>VUE CLI</title>
+</head>
+<body>
+    <ul>VUE CLI một cái gì đó rất hay trong VUE JS
+        <li>Bình thường thì ta dung El hoặc là PRO template để tạo ra template trong html 
+            nhưng cách này không được hay cho lắm 
+        </li>
+        <li>Ta còn 1 cách thứ 3 nữa, nhưng không biết nó là cách gì đó là cách dùng hàm RENDER 
+            hàm mới trong ES6, cái này hay quá ta,nhưng vẫn chưa rõ lắm
+        </li>
+        <li>Hàm này sẽ tự động render template tại nơi mà INS được gọi đến, thay vì dùng từ khóa 
+            template như trước đây
+        </li>
+        <li>Ta có file main.js sẽ được tự động import vào file index.hmtl mà file main này lại được import từ 
+            một file nữa gọi là file APP.VUE 
+            file main này sẽ chiếm thanh niên APP trong file index.html của chúng ta bằng từ khóa el 
+        </li>
+        <li>Điều ta cần nắm ở đây là thanh niên RENDDER sẽ tự động render template tới nơi nào 
+            mà ta cần, hay được chiếm bởi thanh niên el, thay vì dùng PRO template như trước kia
+        </li>
+        <li>Tất cả những gì mà ta render từ main.JS có được khi ta chạy APP.VUE file 
+
+        </li>
+        <li>Một file VUE luôn luôn có 3 phần như sau: 
+            đầu tiên là TEMPLATRE 
+            sau đó là VUE INS, hay đại loại là như vậy, kiểu kiểu nó vậy 
+            và cuối cùng là phần CSS
+        </li>
+        <li>Bởi vì nó thực như vậy nên ta có thể chuyển nó sang các dạng khác dạng mà 
+            JS, nên ta có thể RENDER ở bất cứ đâu mà ta thích, nó gọi là SINGLE FILE, khá hay và cũng khá hấp dẫn 
+            nói chung là ta có thể thay thế các thanh niên nào mà ta thích trong trang bằng việc RENDER 
+            như thế này
+        </li>
+        <li>Trong 1 single page thì thanh niên Scrip không cần lắm 
+            tức là ta không cần EXPORT thì nó vẫn chạy ok nhưng ta cần INS trong single page là vì đôi khi ta 
+            cần tính toán hay thêm các thuộc tính cho nó 
+        </li>
+        <li>NPM run build chạy ra kết quả là 1 file nhỏ hơn hay tối ưu hơn gì đó mà ra không rõ lắm</li>
+    </ul>
+</body>
+</html>

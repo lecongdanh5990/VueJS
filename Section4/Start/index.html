@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>SECTION4</title>
+</head>
+<body>
+    <div id="danh1">
+      <h1 ref="heading">{{ title }}</h1>
+      <button v-on:click="show" ref="myButton">Show Paragraph</button>
+      <p v-if="showParagraph">This is not always visible</p>
+    </div>
+    
+    <div id="danh2">
+      <h1 ref="heading">{{ title }}</h1>
+      <tramtram></tramtram>
+
+      <button v-on:click="onChange">Change some thing in VUE 1</button>
+    </div>
+    <div id="tram"></div>
+    <div class="tramtram"></div>
+    <div class="tramtram"></div>
+    <div id="tramtram"></div>
+    <script src="../../vue.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>

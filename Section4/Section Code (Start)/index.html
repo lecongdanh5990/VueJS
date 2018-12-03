@@ -1,0 +1,12 @@
+<script src="../../vue.js"></script>
+<script src="app.js"></script>
+
+<div id="danh">
+  <h1 ref="heading">{{ title }}</h1>
+  <button v-on:click="show">Show Paragraph</button>
+  <p v-if="showParagraph">This is not always visible</p>
+</div>
+
+<div id="danh2">
+  <h1 ref="heading">{{ title }}</h1>
+</div>

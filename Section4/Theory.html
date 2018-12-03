@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <ul>Tìm hiểu về INSTANCE
+        <li>Ta có thể quản lí nhiều thành phần trong trang bằng nhiều INSTANCE khác nhau </li>
+        <li>Hầu như không có mối quan hệ nào giữa các INSTANCE khác nhau trong trang cả</li>
+        <li>Có thể gọi thanh niên trong INSTANCE này từ 1 thanh niên khác nhưng điều này là không nên</li>
+    </ul>
+    <ul>Tìm hiểu về INSTANCE
+            <li>Đặt tên cho các INSTANCE thông qua các biến để dễ quản lí hơn</li>
+            <li>Ta có thể truy cập đến các thuộc tính của IN thông qua tên mà ta đặt trước 
+                có thể truy cập ở đâu tùy ý, qua 1 thanh niên khác hoặc qua hàm của Js cũng được
+            </li>
+            <li>Ta không thể tạo mới Property ở ngoài 1 IN được 
+                nhưng khi ta tác động tới những PRO của nó thì nó luôn biết vì nó có cơ chế theo dõi 
+
+            </li>
+            <li>Luôn luôn nhớ là ta không thể thêm mới PRO ở ngoài, nhưng có thể 
+                tác động hay thay đổi nó ở ngoài được.
+            </li>
+        </ul>
+
+    <ul>Tìm hiểu về INSTANCE
+            <li>Có 3 thanh niên quan trọng trong 1 IN đó là el, data, REF </li>
+            <li>Ta có thể truy cập bất cứ thuộc tính nào có trong  
+                1 In từ bên ngoài, ta cũng có thể tạo data bên ngoài và gán vào 
+                bên trong IN
+            </li>
+            <li>Ta không thể tạo mới Property ở ngoài 1 IN được 
+                    nhưng khi ta tác động tới những PRO của nó thì nó luôn biết vì nó có cơ chế theo dõi 
+    
+            </li>
+            <li>Luôn luôn nhớ là ta không thể thêm mới PRO ở ngoài, nhưng có thể 
+                    tác động hay thay đổi nó ở ngoài được.
+            </li>
+            <li>Nói chung là ta có thể lồng ghép giữa VUE JS và JS trong 1 file js 1 cách mượt mà và lả lướt 
+                đó chính là cách mà JS hoạt động 
+            </li>
+            <li>Bình thường thì thanh niên VUE JS sẽ chiếm quyền Control các thanh niên Html bên trong nó 
+                hay gọi là template, khi ta chiếm quyền và ghi đè như trong trường hợp REF là ta đang tác động tới DOM  
+                chứ không phải tới TEMPLATE, do đó khi VUE JS render lại DOM, cấu trúc html của trang chứ không phải là  
+                1 phần của VUE INSTANCE, do đó sự thay đổi này có thể bị ghi đè
+            </li>
+            <li>Thanh niên REF có thể được sử dụng để lấy giá trị của các thuộc tính mà nó liên quan tới  
+                hay là liên hệ vào
+            </li>
+        </ul>
+        <ul>MOUNT và TEMPLATE 
+            <li>Thanh niên MOUNT dùng khi ta cài đặt chương trình mà không biết nên xài cho ai 
+                hoặc là thanh niên mà ta cần tác động không tồn tại 
+            </li>
+            <li>Bình thường thì ta tiến hành gọi và bảo thằng VUE là chiếm quyền trong điều khiển 
+                của các thanh niên có trong file html 
+                nhưng ta cũng có thể tạo ra các thanh niên html trong chính VUE IN 
+                thông qua thuộc tính TEMPLATE 
+            </li>
+            <li>Nói chung là ta nên sử dụng Mount hay là khai báo thẳng các thuộc tính của IN 
+                ngay trong IN luôn chứ không nên dùng JS thuần đó là cách mà VUE JS hoạt động 
+
+            </li>
+        </ul>
+
+        <ul>Component
+            <li>Ta có thể tạo ra nhiều Component để có thể tái sử dụng trong template html </li>
+            <li>Dùng cách này bằng cách gọi tên của nó mà ta đặt trong comonent gọi như 1 tag html 
+
+            </li>
+            <li>khi mà ta điều khiển thanh niên html bằng VUE JS nó sẽ chiếm quyền 
+                và tạo ra 1 template tự động nói chung là như vậy, khá hay gõ để test bàn phím cho vui 
+            </li>
+            <li>Nhưng đôi khi ta cần thêm 1 code html vào trong trang thông thường thi ta tạo bằng 
+                thuộc tính template nhưng cái này không ok cho lắm vì ta không thể tạo ra nhiều code 
+                VUE JS
+            </li>
+        </ul>
+        <ul>Vituarl DOM
+            <li>Khi ta dùng template để hiển thị ra html code, hay hiện tt lên trình duyệt thì ok 
+                nhưng khó để update lại giá trị không giống như khi ta tạo pro và update giá trị của nó 
+                thì thanh niên VUE sẽ tự động xem và update giá trị của nó 1 cách nhanh chóng 
+            </li>
+            <li>Khi ta update lại templare thì nó sẽ update lại nguyên cái gọi là DOM, quá trình này có thể rất lâu 
+                js thì rất nhanh nhưng truy cập, hay update vào DOM thì có thể rất mất thời gian
+            </li>
+            <li>Để giải quyết tình trạng này thì VITURL DOM ra đời, VITUAL DOM cpoy toàn bộ DOM và sau đó 
+                chỉ update những phần mà thay đồi hay cập nhật lại những phần mới mà trong DOM cũ thay đổi 
+            </li>
+        </ul>
+        <ul>VueJS INSTANCE LIFECYCLE 
+            <li>B1:Khởi tạo IN </li>
+            <li>Khởi tạo data và event </li>
+            <li>IN được tạo ra</li>
+            <li>Compile temple (thong dịch template của phần html mà nó năm giữ)</li>
+            <li>Thay templa bằng Compile code được compiled</li>
+            <li>Gắn vào DOM(gắn template đã được COMPILED vào DOM)</li>
+            <li>Lắng nghe sự thay đổi trong DOM, nếu có và tiến hành re-render lại TEMPLATE </li>
+            <li>Sau đó ta tiến hành DESTROY</li>
+            <li>======>>>>>>> ta có thể lợi dụng cái này đẻ viết các hàm thực hiện các chức năng trong quá trình 
+                hoạt động của INS.
+            </li>
+        </ul>
+        <ul>Thực hành
+            <li>Khi ta tiến hành Update 2 lần thì không có chuyện gì xảy ra trên console vì không có sự thay đổi 
+                của DOM nên console nó không có chuyện gì xảy ra
+            </li>
+            <li>Khi ta đã destroy rồi thì thanh niên này không còn nữa, nên ta không thể nào Update
+                được nữa, hay vãi
+            </li>
+        </ul>
+</body>
+</html>
