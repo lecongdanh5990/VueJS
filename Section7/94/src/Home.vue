@@ -1,6 +1,7 @@
 <template>
   <div>
-    <h1>I TRIED TO LEARN DAY BY DAY, SO I THINK I CAN FIND A GOOD JOBS IN 2019 AND MY SALARY IS {{salary}}</h1>
+    <h1>I TRIED TO LEARN DAY BY DAY, SO I THINK I CAN FIND A
+       GOOD JOBS IN 2019 AND MY SALARY IS {{salary}}</h1>
     <hr>
     <button v-on:click="changeSalary">Change Salary</button>
   </div>

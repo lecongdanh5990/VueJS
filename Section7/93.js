@@ -12,7 +12,7 @@ var com={
             think:"Actively"
         };
     },
-    template:'<p>I am:{{status}} and I think {{think}} <button v-on:click="showThink">Show Think</button></p>',
+    template:'<p>I am:{{status}} and I think {{think}} <button @click="showThink">Show Think</button></p>',
     methods:{
         showThink:function(){
             this.think="Carefully";
